@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Homepage</title>
+</head>
+<body>
+<h1>Get All Topics</h1>
+<form method="get" action="/topics">
+<button type="submit">Get Topics</button>
+</form>
+<h1>Get a Topic</h1>
+
+<form th:action="@{/topics}" th:object="${abc}" method="get">
+<input type="text" id="abc" name="abc"></input>
+<button type="submit">Get Topics</button>
+</form>
+<h1>Add a Topic</h1>
+<form method="post" action="/topics">
+<input type="text" name="id"></input>
+<input type="text" name="name"></input>
+<input type="text" name="description"></input>
+<button type="submit">Add Topic</button>
+</form>
+<h1>Update a topic</h1>
+<form method="put" th:action="@{/topics/} + ${id}">
+<input type="text" name="id"></input>
+<input type="text" name="name"></input>
+<input type="text" name="description"></input>
+<button type="submit">Add Topic</button>
+</form>
+<h1>Delete a topic</h1>
+
+</body>
+</html>

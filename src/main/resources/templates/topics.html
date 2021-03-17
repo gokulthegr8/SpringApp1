@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>topics</title>
+</head>
+<body>
+<h1>Topics</h1>
+<table>
+    <thead>
+        <tr>
+            <th> Id </th>
+            <th> Name </th>
+            <th> Description </th>
+        </tr>
+    </thead>
+    <tbody>
+	<tr th:if="${topics.empty}">
+            <td colspan="2"> No Books Available </td>
+        </tr>
+        <tr th:each="topic : ${topics}">
+            <td><span th:text="${topic.id}"> Id </span></td>
+            <td><span th:text="${topic.name}"> Name </span></td>
+            <td><span th:text="${topic.description}"> Description </span></td>
+            
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>
